@@ -1,3 +1,5 @@
+package com.biblioteca.SistemaBibliotecaSpring.model;
+
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

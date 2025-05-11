@@ -1,4 +1,8 @@
+package com.biblioteca.SistemaBibliotecaSpring.repository;
+
+import com.biblioteca.SistemaBibliotecaSpring.model.Libro;
 import java.util.Optional;
+import java.util.List;
 
 public interface LibroRepository {
     Libro save(Libro libro);
