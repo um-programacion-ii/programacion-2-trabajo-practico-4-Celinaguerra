@@ -1,7 +1,5 @@
 package com.biblioteca.SistemaBibliotecaSpring.exception;
 
-import com.biblioteca.SistemaBibliotecaSpring.exception.LibroNoEncontradoException;
-import com.biblioteca.SistemaBibliotecaSpring.exception.UsuarioNoEncontradoException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -17,6 +15,11 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(UsuarioNoEncontradoException.class)
     public ResponseEntity<String> handleUsuarioNoEncontradoException(UsuarioNoEncontradoException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(PrestamoNoEncontradoException.class)
+    public ResponseEntity<String> handlePrestamoNoEncontradoException(PrestamoNoEncontradoException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 
