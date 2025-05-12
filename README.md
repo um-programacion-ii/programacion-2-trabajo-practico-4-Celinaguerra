@@ -119,8 +119,8 @@ Desarrollar un sistema de gestión de biblioteca utilizando Spring Framework, im
 > 💡 **Nota**: Esta estimación considera la experiencia adquirida en trabajos anteriores y la complejidad de implementar una arquitectura en capas con Spring Framework. El tiempo se ha ajustado considerando que no se requiere implementación de persistencia real.
 
 ## 👨‍🎓 Información del Alumno
-- **Nombre y Apellido**: [Nombre y Apellido del Alumno]
-- **Legajo**: [Número de Legajo]
+- **Nombre y Apellido**: Celina Guerra Díaz
+- **Legajo**: 62146
 
 ## 📋 Requisitos Previos
 
@@ -142,6 +142,56 @@ Desarrollar un sistema de gestión de biblioteca utilizando Spring Framework, im
 - Mockito 5.8.0
 - Git y GitHub
 
+## 🛠️ Instrucciones de Instalación
+1. Clonar el repositorio:
+   ```bash
+    git clone git@github.com:um-programacion-ii/programacion-2-trabajo-practico-4-Celinaguerra.git
+   ```
+2. Navegar al directorio del proyecto:
+   ```bash
+    cd programacion-2-trabajo-practico-4-Celinaguerra/SistemaBibliotecaSpring
+   ```
+3. Ejecutar los tests:
+   ```bash
+    mvn test
+   ```
+
+
+## 🧱 Arquitectura General
+El sistema utiliza una arquitectura **en capas** basada en Spring Boot:
+
+- **Controller**: expone endpoints REST.
+- **Service**: contiene la lógica de negocio.
+- **Repository**: simula acceso a datos (repositorios en memoria).
+- **Model**: entidades del dominio (`Libro`, `Usuario`, `Prestamo`).
+
+## 🔄 Flujo de una operación típica (ej: crear un libro)
+1. El `LibroController` recibe una petición POST.
+2. Llama a `LibroService.guardar()`.
+3. `LibroService` valida y llama a `LibroRepository.save()`.
+4. `LibroRepository` persiste en memoria.
+
+## 🔍 Decisiones de diseño
+
+### Uso de Repositorios en Memoria
+- ✅ Simula persistencia sin necesidad de una base de datos real.
+- ✅ Ideal para pruebas y desarrollo rápido.
+- ❌ No apto para entornos productivos.
+
+### Uso de Lombok
+- Facilita la escritura de código reduciendo boilerplate (`@Data`, `@AllArgsConstructor`, etc.).
+
+### Separación en Capas
+- Favorece el principio de **Responsabilidad Única (SRP)**.
+- Permite testear componentes de forma aislada (unit testing e integración).
+
+### Principios aplicados
+- ✅ **SOLID** (especialmente SRP y DIP).
+- ✅ Pruebas unitarias e integración bien separadas.
+- ✅ Reutilización de servicios e interfaces.
+
+
+---------------------
 ## 📘 Etapas del Trabajo
 
 ### Etapa 1: Configuración del Proyecto y Modelos Base
